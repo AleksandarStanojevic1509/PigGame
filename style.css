@@ -1,0 +1,279 @@
+body {
+    background: url("img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Amatic SC', cursive;
+    text-transform: uppercase;
+}
+
+
+
+
+#background {
+
+    width: 70%;
+    height: 70%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: solid rgba(26, 26, 26, 0.3) 2px;
+    border-radius: 5px;
+    box-shadow: 6px 6px 8px 2px rgba(59, 59, 59, 0.2);
+    margin-left: 15%;
+    margin-top: 1%;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+
+button {
+    border: 0;
+    background: none;
+    font-family: 'Amatic SC', cursive;
+    font-size: 50px;
+    font-weight: 900;
+    color: brown;
+    margin: auto;
+    cursor: pointer;
+}
+
+#buttons {
+    width: 70%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: solid rgba(26, 26, 26, 0.3) 2px;
+    border-radius: 5px;
+    box-shadow: 6px 6px 8px 2px rgba(59, 59, 59, 0.2);
+    margin-left: 15%;
+    margin-top: 2%;
+    padding: 0.5% 0;
+    display: inline-flex;
+
+}
+
+h1 {
+    color: brown;
+    font-size: 100px;
+    margin-top: 1%;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 700;
+}
+
+#dice {
+    height: 9%;
+    width: 9%;
+    position: absolute;
+    margin-left: 30.5%;
+    margin-top: 8%;
+    max-width: 100%;
+    height: auto;
+}
+
+h4,
+p {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.active {
+
+    border: solid rgba(26, 26, 26, 0.8) 2px;
+    box-shadow: 6px 6px 8px 2px rgba(44, 44, 44, 0.4);
+}
+
+.winner {
+    border: solid rgba(255, 0, 0, 0.8) 5px;
+    box-shadow: 6px 6px 8px 2px rgba(44, 44, 44, 0.4);
+
+}
+
+.player-0-box {
+    width: 30%;
+    height: 80%;
+    float: left;
+    background-color: rgba(65, 65, 65, 0.1);
+    border-radius: 5px;
+    margin-left: 5%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.player-1-box {
+    width: 30%;
+    height: 80%;
+    float: right;
+    background-color: rgba(65, 65, 65, 0.1);
+    border-radius: 5px;
+    margin-right: 5%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+
+}
+
+.player-0-box h3,
+.player-1-box h3 {
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 7%;
+    font-size: 100px;
+    font-weight: 900;
+    color: rgba(26, 26, 26, 0.7);
+}
+
+.score {
+    font-size: 900%;
+    font-weight: 900;
+    color: rgba(26, 26, 26);
+    margin-top: 9%;
+    margin-bottom: 9%;
+}
+
+.round-score {
+    width: 40%;
+    height: 20%;
+    box-sizing: content-box;
+    background-color: rgba(53, 53, 53, 0.2);
+    margin: auto ;
+    border: solid rgba(26, 26, 26, 0.3) 2px;
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 4%;
+
+}
+.player-0-box div h3,
+.player-1-box div h3 {
+    font-size: 180%;
+    color: rgba(26, 26, 26);
+}
+
+.player-0-box div p,
+.player-1-box div p {
+    font-size: 350%;
+    color: rgba(26, 26, 26);
+}
+
+
+
+
+@media screen and (max-width: 1800px) {
+    h1 {
+        font-size: 100px;
+        font-weight: 700;
+    }
+    .player-0-box h3,
+    .player-1-box h3 {
+        margin-top: 7%;
+        font-size: 90px;
+        font-weight: 900;
+    }
+    
+    .score {
+        font-size: 900%;
+        font-weight: 900;
+        margin-top: 9%;
+    margin-bottom: 9%;
+    }
+    /*
+    .round-score {
+        width: 30%;
+        height: 20%;
+        margin: 10% auto 3%;
+           
+    }
+    */
+    
+
+    @media screen and (max-width: 1500px) {
+        h1 {
+            font-size: 70px;
+            font-weight: 700;
+        }
+        .player-0-box h3,
+        .player-1-box h3 {
+            margin-top: 7%;
+            font-size: 80px;
+            font-weight: 900;
+        }
+        
+        .score {
+        font-size: 800%;
+         font-weight: 900;
+        margin-top: 9%;
+        margin-bottom: 9%;
+        }
+        /*
+        .round-score {
+            width: 40%;
+            height: 20%;
+            margin: 10% auto 3%;
+               
+        }
+        */
+        .player-0-box div h3,
+        .player-1-box div h3 {
+            font-size: 25px;
+            
+        }
+        
+        .player-0-box div p,
+        .player-1-box div p {
+            font-size: 50px;
+            
+        }
+    }
+    button {          
+        font-size: 40px;
+    } 
+
+
+@media screen and (max-width: 992px) {
+    .player-0-box h3,
+    .player-1-box h3 {
+
+        margin-top: 8%;
+        font-size: 400%;
+        font-weight: 900;
+        
+    }
+
+    .score {
+        font-size: 400%;
+        font-weight: 900;
+        
+        margin-top: 10%;
+    }
+
+    .player-0-box div h3,
+    .player-1-box div h3 {
+        font-size: 20px;
+        
+    }
+
+    .player-0-box div p,
+    .player-1-box div p {
+        font-size: 30px;
+    }
+    h1 {
+        font-size: 250%;
+        margin-top: 1%;
+    }
+    
+    button {          
+        font-size: 30px;
+    }  
+       
+
+@media screen and (max-width: 700px) {
+    .player-0-box h3,
+    .player-1-box h3 {
+
+        margin-top: 5%;
+        font-size: 250%;
+        font-weight: 900;
+        
+    }
+    
+
+@media screen and (max-width: 600px) {
+
+    }
+   
