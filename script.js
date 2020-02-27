@@ -2,12 +2,12 @@ var scores, roundScores, activePlayer, gamePlaying ;
 
 init();
 
-/* var playerFirst = prompt('Ime prvog igrača je?');
+var playerFirst = prompt('Ime prvog igrača je?');
 var playerSecond = prompt('Ime drugog igrača je?');
 
 document.querySelector('#player-0').textContent = playerFirst;
 document.querySelector('#player-1').textContent = playerSecond;
- */
+ 
 
 //eventlistener za dugme roll
 
