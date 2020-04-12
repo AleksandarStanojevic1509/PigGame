@@ -1,8 +1,9 @@
-let scores, roundScores, activePlayer, gamePlaying;
+let scores, gamePlaying,roundScores, activePlayer
 
 let roll = document.querySelector('.roll');
 let hold = document.querySelector('.hold');
 let newGame = document.querySelector('.new');
+
 
 // funkcija koja restartuje igricu i brise sve podatke
 
@@ -38,30 +39,33 @@ let init = () => {
   document.querySelector('.player-0-box').classList.add('active');
 };
 
+
 init();
+
 
 // funkcija prebacuje sledeceg igraca ako se ispuni neki uslov (predhodni igrac dobio 1 ili je igrac odlucio da sacuva trenutni zbir)
 let nextPlayer = () => {
-  //activePlayer === 0 ? (activePlayer = 1) : (activePlayer = 0);
-  if (activePlayer === 0) {
-    activePlayer = 1;
-  } else {
-    activePlayer = 0;
-  }
-  //i trenutni rezultat pocinje da se racuna odpocetka
-  roundScores = 0;
-
-  //i da stampa u box-u 0, tj. da obrise dotadasnje poene
-  document.querySelector('#current-0').textContent = '0';
-  document.querySelector('#current-1').textContent = '0';
-
-  //ukljucivanje #active
-  document.querySelector('.player-0-box').classList.toggle('active');
-  document.querySelector('.player-1-box').classList.toggle('active');
-
-  //kada igrac dobije 1 kocka ponovo nestaje
-  document.querySelector('#dice').style.display = 'none';
-};
+    //activePlayer === 0 ? (activePlayer = 1) : (activePlayer = 0);
+    if (activePlayer === 0) {
+      activePlayer = 1;
+    } else {
+      activePlayer = 0;
+    }
+    //i trenutni rezultat pocinje da se racuna odpocetka
+    roundScores = 0;
+  
+    //i da stampa u box-u 0, tj. da obrise dotadasnje poene
+    document.querySelector('#current-0').textContent = '0';
+    document.querySelector('#current-1').textContent = '0';
+  
+    //ukljucivanje #active
+    document.querySelector('.player-0-box').classList.toggle('active');
+    document.querySelector('.player-1-box').classList.toggle('active');
+  
+    //kada igrac dobije 1 kocka ponovo nestaje
+    document.querySelector('#dice').style.display = 'none';
+  };
+  
 
 //eventlistener za dugme roll
 

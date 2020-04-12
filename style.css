@@ -4,17 +4,15 @@
   box-sizing: border-box;
 }
 body {
-  background: url('img/background.jpg');
+  background: url("img/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: 'Amatic SC', cursive;
+  font-family: "Amatic SC", cursive;
   text-transform: uppercase;
 }
 #container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 15vh 60vh 15vh;
-  height: 90vh;
 }
 /*HEADER*/
 header {
@@ -22,7 +20,7 @@ header {
 }
 h1 {
   color: brown;
-  font-size: 11vh;
+  font-size: 5em;
   text-align: center;
   vertical-align: middle;
   font-weight: 700;
@@ -58,6 +56,11 @@ main {
   margin: 8% auto;
   text-align: center;
   border-radius: 10px;
+}
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #score-0,
 #score-1 {
@@ -107,9 +110,9 @@ footer {
 }
 button {
   border: 0;
-  /* font-size: 6vh; */
+  padding: 1% 0;
   background: none;
-  font-family: 'Amatic SC', cursive;
+  font-family: "Amatic SC", cursive;
   font-weight: 900;
   color: brown;
   margin: auto;
@@ -124,4 +127,35 @@ button {
   margin: 1% 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media only screen and (min-width: 1200px) {
+  main {
+    grid-template-columns: 25% 50% 25%;
+  }
+  footer {
+    grid-template-columns: 25% 50% 25%;
+  }
+  #score-0,
+  #score-1 {
+    font-size: 5em;
+  }
+  #player-0,
+  #player-1 {
+    font-size: 5em;
+  }
+  #current-0,
+  #current-1 {
+    font-size: 3em;
+  }
+  button {
+    font-size: 3em;
+  }
+  .round-score h3 {
+    font-size: 2em;
+  }
+  .player-0-box,
+  .player-1-box{
+    padding-bottom: 4%;
+  }
 }
