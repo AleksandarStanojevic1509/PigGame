@@ -25,6 +25,39 @@ h1 {
   vertical-align: middle;
   font-weight: 700;
 }
+/* FORM */
+#set-up {
+  display: grid;
+  grid-template-columns: 15% 70% 15%;
+}
+form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0.5rem 0;
+  gap: 1rem;
+}
+form input {
+  width: 100%;
+  padding: 0.3rem;
+}
+input[type="text"],
+input[type="number"] {
+  border: solid rgba(26, 26, 26, 0.3) 2px;
+  border-radius: 5px;
+  background-color: rgba(240, 248, 255, 0.561);
+  color: brown;
+  outline: none;
+}
+input[type="submit"]{
+  border: 2px solid brown;
+  border-radius: 5px;
+  background: none;
+  background-color: rgba(240, 248, 255, 0.561);
+}
+input[type="submit"]:hover{
+  cursor: pointer;
+}
+
 /*MAIN*/
 main {
   grid-column: 1/2;
@@ -130,12 +163,12 @@ button {
 }
 
 @media only screen and (min-width: 1200px) {
-  main {
+  main,
+  footer,
+  #set-up {
     grid-template-columns: 25% 50% 25%;
   }
-  footer {
-    grid-template-columns: 25% 50% 25%;
-  }
+
   #score-0,
   #score-1 {
     font-size: 5em;
@@ -155,7 +188,7 @@ button {
     font-size: 2em;
   }
   .player-0-box,
-  .player-1-box{
+  .player-1-box {
     padding-bottom: 4%;
   }
 }

@@ -18,12 +18,41 @@
       integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
       crossorigin="anonymous"
     />
+    <script src="app.js" defer></script>
   </head>
   <body>
     <div id="container">
       <header>
         <h1>Pig Game</h1>
       </header>
+
+      <div id="set-up">
+        <div>&nbsp;</div>
+        <form>
+          <input
+            type="text"
+            name=""
+            id="first-p"
+            placeholder="First player name:"
+          />
+          <input
+            type="text"
+            name=""
+            id="second-p"
+            placeholder="Second player name:"
+          />
+          <input
+            type="number"
+            name=""
+            id="max-score"
+            max="500"
+            min="1"
+            placeholder="Winning score: "
+          />
+          <input id='set-up-submit' type="submit" value="Set up game!" />
+        </form>
+        <div>&nbsp;</div>
+      </div>
 
       <main>
         <div>&nbsp;</div>
@@ -82,7 +111,5 @@
         <div>&nbsp;</div>
       </footer>
     </div>
-
-    <script  type="module"  src="app.js" ></script>
   </body>
 </html>

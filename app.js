@@ -1,10 +1,31 @@
-let scores, gamePlaying,roundScores, activePlayer
+let scores, gamePlaying,roundScores, activePlayer, winningScore
 
-let roll = document.querySelector('.roll');
-let hold = document.querySelector('.hold');
-let newGame = document.querySelector('.new');
+let rollHandler = document.querySelector('.roll');
+let holdHandler = document.querySelector('.hold');
+let newGameHandler = document.querySelector('.new');
 
 
+let firstPlayer = document.getElementById('first-p');
+let secondPlayer = document.getElementById('second-p');
+let scoreSetUp = document.getElementById('max-score');
+let setUpHandler = document.getElementById('set-up-submit');
+let setUpBox = document.getElementById('set-up');
+let form = document.querySelector('form');
+
+
+// funkcija koja proverava pobednika
+
+let checkWinner = (res) =>{
+  if (scores[activePlayer] >= res) {
+    document.querySelector(`#player-${activePlayer}`).textContent = 'WINNER!!!';
+    document.querySelector('#dice').style.display = 'none';
+    document.querySelector(`.player-${activePlayer}-box`).classList.add('winner');
+    document.querySelector(`.player-${activePlayer}-box`).classList.remove('active');
+    gamePlaying = false;
+  } else {
+    nextPlayer();
+  }
+}
 // funkcija koja restartuje igricu i brise sve podatke
 
 let init = () => {
@@ -12,21 +33,10 @@ let init = () => {
   roundScores = 0; // za rezultat po rundi. zajednicka varijabla u svakoj novoj rundi dodeljuje se drugom igracu
   activePlayer = 0; // ako je 0 onda igra player1 ako je 1 onda igra player2
   gamePlaying = true;
-
-  let playerFirst = prompt('Enter first player name: ');
-  let playerSecond = prompt('Enter second player name:');
-
-  if (playerFirst) {
-    document.querySelector('#player-0').textContent = playerFirst;
-  } else {
-    document.querySelector('#player-0').textContent = 'Player 1';
-  }
-  if (playerSecond) {
-    document.querySelector('#player-1').textContent = playerSecond;
-  } else {
-    document.querySelector('#player-1').textContent = 'Player 2';
-  }
-
+  winningScore = undefined;
+  
+  document.querySelector('#player-0').textContent = 'Player 1';
+  document.querySelector('#player-1').textContent = 'Player 2';
   document.querySelector('#dice').style.display = 'none';
   document.querySelector('#score-0').textContent = '0';
   document.querySelector('#score-1').textContent = '0';
@@ -69,7 +79,7 @@ let nextPlayer = () => {
 
 //eventlistener za dugme roll
 
-roll.addEventListener('click', function() {
+rollHandler.addEventListener('click', function() {
   // if statemant koristimo u kombinaciji sa gamePlaying varijablom kako bi oznacili kraj igre i 'ukocili' roll dice dugme
   if (gamePlaying) {
     //Sta se desi kad se klikne na 'roll dice'
@@ -96,7 +106,7 @@ roll.addEventListener('click', function() {
 
 //eventlistener za dugme hold
 
-hold.addEventListener('click', function() {
+holdHandler.addEventListener('click', function() {
   // if statemant koristimo u kombinaciji sa gamePlaying varijablom kako bi oznacili kraj igre i 'ukocili' hold dugme
   if (gamePlaying) {
     //dodaj trenutni rezultat u konacni zbir
@@ -105,18 +115,39 @@ hold.addEventListener('click', function() {
     // dodaj rezultat u tabelu
     document.querySelector(`#score-${activePlayer}`).textContent = scores[activePlayer];
 
-    //proveri da li je igrac pobedio - da li ima vise od 250 poena
-    if (scores[activePlayer] >= 250) {
-      document.querySelector(`#player-${activePlayer}`).textContent = 'WINNER!!!';
-      document.querySelector('#dice').style.display = 'none';
-      document.querySelector(`.player-${activePlayer}-box`).classList.add('winner');
-      document.querySelector(`.player-${activePlayer}-box`).classList.remove('active');
-      gamePlaying = false;
-    } else {
-      nextPlayer();
+    //proveri da li je igrac pobedio - da li ima vise od 250 poena ili koliko je setovano
+    if (winningScore === undefined){
+      checkWinner(250);
+    }
+    else {
+      checkWinner(winningScore);
     }
   }
 });
 
+
+setUpHandler.addEventListener('click', (event)=>{
+  event.preventDefault()
+  
+  winningScore = scoreSetUp.value;
+  
+  if (firstPlayer) {
+    document.querySelector('#player-0').textContent = firstPlayer.value;
+  } else {
+    document.querySelector('#player-0').textContent = 'Player 1';
+  }
+  if (secondPlayer) {
+    document.querySelector('#player-1').textContent = secondPlayer.value;
+  } else {
+    document.querySelector('#player-1').textContent = 'Player 2';
+  }
+  form.reset();
+  setUpBox.style.display = 'none';
+})
+
+
 //eventlistener za dugme new game
-newGame.addEventListener('click', init);
+newGameHandler.addEventListener('click', ()=>{
+  init();
+  setUpBox.style.display = 'grid';
+});
